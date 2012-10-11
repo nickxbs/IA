@@ -1,6 +1,6 @@
 ﻿using Bantumi.Entities;
 using Bantumi.Entities.Interface;
-using Moq;
+
 using NUnit.Framework;
 
 namespace Tests
