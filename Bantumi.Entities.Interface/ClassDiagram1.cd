@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="Bantumi.Entities.Interface.IAIPlayer">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>IAIPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bantumi.Entities.Interface.IBuca">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>IBuca.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bantumi.Entities.Interface.IGioco">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABEAAAAAAAAABAABAgAQAAAAAAAAAAQABA=</HashCode>
+      <FileName>IGioco.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bantumi.Entities.Interface.IHumanPlayer">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IHumanPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bantumi.Entities.Interface.IPlayer">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Bantumi.Entities.Interface.ITavola">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABA=</HashCode>
+      <FileName>ITavola.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Bantumi.Entities.Interface.Lato">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEAAAA=</HashCode>
+      <FileName>IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
