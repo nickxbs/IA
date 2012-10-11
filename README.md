@@ -11,8 +11,10 @@
 <h2>Il problema</h2>
 <h2>Il programma</h2>
 Il programma è stato sviluppato in 2 fasi:
-1) Realizzazione della struttura del gioco con TDD per implementare le regole
-2) Implementazione di alcuni algoritmi di IA 
+<ul>
+
+<li>1) Realizzazione della struttura del gioco con TDD per implementare le regole</li>
+<li>2) Implementazione di alcuni algoritmi di IA</li> </ul>
 <h2>Relazione</h2>
 Nella relazione ho riassunte le regole del gioco, una breve descrizione delle tecniche utilizzate per realizzare gli algoritmi di IA e alcune simulazioni di partite fra il mio programma e alcuni Bot che si trovano in commercio. 
 <h4>Download</h4>
