@@ -102,27 +102,27 @@
 
 %%% Title	
 \title{ \vspace{-1in} 	\usefont{OT1}{bch}{b}{n}
-		\huge \strut Implemenazione del gioco del Bantumi \strut \\
-		\Large \bfseries \strut Corso Intelligenza Artificiale 2012 \strut
+		\huge \strut Implementazione del gioco del Bantumi \strut \\
+		\Large \bfseries \strut Corso di Intelligenza Artificiale 2012 \strut
 }
 \author{ 									\usefont{OT1}{bch}{m}{n}
         Nicola Febbrari\\		\usefont{OT1}{bch}{m}{n}
-        Universit\`a degli studi di Verona\\	\usefont{OT1}{bch}{m}{n}
+        Universit\`a degli Studi di Verona\\	\usefont{OT1}{bch}{m}{n}
         Facolt\`a MM.FF.NN.\\
         \texttt{nicola.febbrari@studenti.univr.it}
 }
-\date{12 ottobre 2012}
+\date{22 gennaio 2013}
 
 %%% Begin document
 \begin{document}
 \maketitle
 \section{Introduzione}
-Con questo progetto vorrei mettere in pratica alcune  tecniche che sono state spiegate durante il corso di intelligenza artificiale, pertanto ho deciso di realizzare il gioco del Bantumi implementando un algoritmo di intelligenza artificiale per poi confrontarlo con altri programmi analoghi.
+Con questo progetto vorrei mettere in pratica alcune  tecniche che sono state spiegate durante il corso di intelligenza artificiale, pertanto, ho deciso di realizzare il gioco del Bantumi implementando un algoritmo di intelligenza artificiale per poi confrontarlo con altri programmi analoghi.
 
 \section{Il Gioco}
-Il Bantumi \`e un antico gioco da tavolo di origine africana, composto da una tavola in legno con 12 buche disposte su due file parallele e due buche pi\`u grandi, 1 per giocatore, dette granai.
+Il Bantumi \`e un antico gioco da tavolo di origine africana, composto da una tavola in legno con 12 buche disposte su due file parallele e due buche pi\`u grandi, una per giocatore, dette granai.
 Si gioca in due, in partenza ogni giocatore possiede 18 semi che dispone uniformemente nelle proprie buche (3 in ogni buca), lasciando i 2 granai vuoti.
-A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere una propria buca non vuota, prendere tutti i semi che contiene e distribuirli uno in ogni buca successiva in senso antiorario utilizzando anche il granaio e le buche dell' avversario (granaio escluso).
+A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere una propria buca non vuota, prendere tutti i semi che contiene e distribuirli, in senso antiorario, uno in ogni buca successiva, utilizzando anche il granaio e le buche dell'avversario (granaio avversario escluso).
 
 
 
@@ -133,15 +133,15 @@ A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere 
     \label{fig:verticalcell}
 \end{figure}
 
-\section{Regole particolari}
+\section{Altre regole}
 \begin{enumerate}
 	\item Un giocatore non pu\`o mai depositare semi nel granaio dell'avversario
-	\item Se l'ultimo seme, tra quelli da distribuire del proprio turno, viene depositato nel granaio il giocatore ha diritto ad un ulteriore turno.
+	\item Se l'ultimo seme, tra quelli da distribuire, viene depositato nel proprio granaio, il giocatore ha diritto ad un ulteriore turno.
 
 \begin{figure}[h]
 \centering
         \includegraphics[totalheight=3cm]{Bantumi_4.png}
-    \caption{Turno multipli.}
+    \caption{Turni multipli.}
     \label{fig:verticalcell}
 \end{figure}
 	\item Se l'ultimo seme viene depositato in una propria buca senza semi, il giocatore prender\`a questo seme e tutti i semi della buca di fronte dell'avversario e li metter\`a nel proprio granaio.
@@ -159,26 +159,26 @@ A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere 
     \label{fig:verticalcell}
 \end{figure}
 
-	\item Il gioco termina quando, durante il turno di un giocatore,  tutte le proprie buche sono vuote. In questo momento il giocatore con pi\`u semi nel granaio \`e il vincitore.
+	\item Il gioco termina quando tutte le buche di un giocatore sono vuote. Terminato il gioco il giocatore con pi\`u semi nel granaio \`e il vincitore.
 \end{enumerate}
 
 \section{Implementazione del Gioco}
 \subsection{I progetti.}
-Ho strutturato il codice dividendolo in 4 progetti.
+Ho strutturato il codice dividendolo in 4 progetti:
 \begin{itemize}
-	\item \textit{Bantumi.entities.interface}: il progetto in cui sono contenute tutte le interfacce delle entit\`a
-	\item \textit{Bantumi.entities}: l'implementazione di tutte le classi
-	\item \textit{Test}: il progetto di unit test per il testo in automatico durante il processo di TDD
-	\item \textit{UI Console}: il progetto per user interface
+	\item \textit{Bantumi.entities.interface}: il progetto in cui sono contenute tutte le interfacce delle entit\`a;
+	\item \textit{Bantumi.entities}: l'implementazione di tutte le classi;
+	\item \textit{Test}: il progetto di unit test per il test automatico durante il processo di TDD;
+	\item \textit{UI Console}: il progetto per la user interface.
 \end{itemize}
 
 \subsection{Le entit\`a}
-Le principali entit\`a per la realizzazione del gioco sono
+Le principali entit\`a per la realizzazione del gioco sono:
 \begin{itemize}
-	\item La classe \textit{Tavola}, che descrive la tavola fisica, le buche e i semi contenuti
-	\item Le classi \textit{Player}, che descrivono le varie implementazioni dei giocatori
-	\item La classe \textit{Gioco}, che implementa le regole e i vincoli del Bantumi
-	\item La classe \textit{Bantumi}, che si occupa del set-up
+	\item La classe \textit{Tavola}, che descrive la tavola fisica, le buche e i semi contenuti;
+	\item Le classi \textit{Player}, che descrivono le varie implementazioni dei giocatori;
+	\item La classe \textit{Gioco}, che implementa le regole e i vincoli del Bantumi;
+	\item La classe \textit{Bantumi}, che si occupa del set-up.
 \end{itemize}
 
 
@@ -187,51 +187,76 @@ Le principali entit\`a per la realizzazione del gioco sono
 Per implementare un giocatore con intelligenza artificiale ho utilizzato uno degli algoritmi per la \textit{ ricerca con avversari} visti a lezione, l'algoritmo \textit{ MinMax}.
 \paragraph{Definizioni}
 \begin{itemize}
-\item L'\textit{albero} rappresenta la combinezione di tutte le possibili mosse eseguibili partendo da una situazione consolidata della tavola di partenza.
+\item L'\textit{albero} rappresenta la combinazione di tutte le possibili mosse eseguibili, partendo da una situazione consolidata della tavola di partenza.
 \item Un \textit{nodo} dell'albero rappresenta una possibile mossa fatta dal giocatore di turno.
-\item Il \textit{livello} dell'albero rappresenta tutte lo possobili mosse (o sequenze di mosse nel caso di turno multiplo) che pu\`o eseguire il giocatore di turno
+\item Il \textit{livello} dell'albero rappresenta tutte le possibili mosse (o sequenze di mosse nel caso di turno multiplo) che pu\`o eseguire il giocatore di turno.
 \end{itemize}
 
 \paragraph{Algoritmo}
 Ad ogni turno l'algoritmo decide quale sia la mossa migliore. Partendo da una situazione consolidata della Tavola, vengono elaborati i valori di ogni mossa possibile usando un calcolo ricorsivo sugli stati successivi generati da tutte le possibili combinazioni di mosse valide.\\
 La ricorsione percorre l'albero fino alle foglie, valuta il valore della foglia assegnandogli un +1 se la foglia rappresenta uno stato di vittoria, 0 se di pareggio o -1 in caso di sconfitta. 
-Dopo aver calcolato il valore di una foglia viene fatto \textit{ backtracking} sull'albero di gioco eventulmente aggiornando la scelta del nodo ottimo \textit{ MinMax} in base al livello dell'albero (nel caso di turno proprio turno Max nel caso di turtno dell'avversario Min).
+Dopo aver calcolato il valore di una foglia viene fatto \textit{ backtracking} sull'albero di gioco eventualmente aggiornando la scelta del nodo ottimo \textit{ MinMax} in base al livello dell'albero (nel caso di turno proprio turno Max nel caso di turno dell'avversario Min).
 
 \paragraph{Complessit\`a}
-Per eseguire la ricerca viene fatta una vista in profondit\`a dell'albero di gioco. Nel Bantumi la dimensione dell'abero \`e risulta ingestibile, infatti se per ogni turno ci possono essere \textit{ m} mosse e una partita dura \textit{ t} turni, nello stato iniziale scorrere tutto l'albero ha una complessit\`a in tempo di $O(m^t)$.
+Per eseguire la ricerca viene fatta una vista in profondit\`a dell'albero di gioco. Nel Bantumi la dimensione dell'albero risulta ingestibile, infatti, se per ogni turno ci possono essere \textit{ m} mosse e una partita dura \textit{ t} turni, nello stato iniziale scorrere tutto l'albero ha una complessit\`a in tempo di $O(m^t)$.
 
 \subsection{Alfa Beta pruning}
-La dimensione dell'albero di gioco del Bantumi nelle prime mosse \`e troppo grande e rendere impossibile l'esplorazione, questo \`e dovuto proprio all'esponenzialit\`a rispetto al numero di turni. Ovviamente non \`e possibile ridurre il problema ad una complessit\`a trattabile (polinomiale), tuttavia utilizzando un meccanismo di potatura possiamo evitare di valutare porzioni di albero che sicuramente non verranno prese in considerazione durante la fase di decisione della mossa migliore.\\ 
-L'idea \`e quella di valutare ad ogni nodo, dato uno determinato stato possibile della tavola, se c'\`e uno stato predecessore che risulta essere migliore. Se questo fosse verificato ovviamente renderebbe inutile la valutazione di questa porzione di albero
+La dimensione dell'albero di gioco del Bantumi nelle prime mosse \`e troppo grande e rende impossibile l'esplorazione, questo \`e dovuto proprio all'esponenzialit\`a rispetto al numero di turni. Ovviamente non \`e possibile ridurre il problema ad una complessit\`a trattabile (polinomiale), tuttavia utilizzando un meccanismo di potatura possiamo evitare di valutare porzioni di albero che sicuramente non verranno prese in considerazione durante la fase di decisione della mossa migliore.\\ 
+L'idea \`e quella di valutare ad ogni nodo, dato un determinato stato possibile della tavola, se c'\`e uno stato predecessore che risulta essere migliore. Se questo fosse verificato ovviamente renderebbe inutile la valutazione di questa porzione di albero
 \begin{lstlisting}[label=maxPruning,caption=Implementazione Max con taglio]
-if (!gioco.Finito)
+//Array delle mosse ordinete secondo una funzione Euristica
+int[] heuristc = _heuristicFunction.HeuristicFunction(gioco.Clone());
+for (int j = 0; j < heuristc.Length; ++j)
 {
-    if (!cambioTurno)
-        valoreProssimaMossa = MaxValue(gioco, depth, alfa, beta);
+    int i = heuristc[j];
+    OperationCount++;
+	//Clono il gioco
+    IGioco giocoClone = gioco.Clone();
+	//Eseguo la mossa
+    giocoClone.Muovi(i);
+	//Verifico se la mossa ha causato un cambio turno
+    bool cambioTurno = gioco.ProssimoTurno != giocoClone.ProssimoTurno;
+    ValoreMossa valoreProssimaMossa = null;
+	//Condizione di uscita dalla ricorsione
+    if (!giocoClone.Finito)
+    {
+		//Se non cambia il turno continuo con il Max
+        if (!cambioTurno)
+		{
+			//Chiamata ricorsiva passo la profondità (per limitare l'albero) e alfa(migliore scelta per MAX)/beta(migliore scelta per MIN)
+            valoreProssimaMossa = MaxValue(giocoClone, depth, alfa, beta);
+		}
+        else
+		{
+            valoreProssimaMossa = MinValue(giocoClone, depth + 1, alfa, beta);
+		}
+    }
+	//Calcolo il valore della mossa	
+    ValoreMossa valore = new ValoreMossa(valoreProssimaMossa, i, ValoreAttuale(giocoClone));
+    if (null == resultMove)
+    {
+        resultMove = valore;
+    }
     else
-        valoreProssimaMossa = MinValue(gioco, depth + 1, alfa, int.MaxValue);
-}
-ValoreMossa valore = new ValoreMossa(valoreProssimaMossa, i, ValoreAttuale(gioco));
-if (null == resultMove)
-	resultMove = valore;
-else
-	resultMove = AggiornoValore(resultMove, valore, latoStep);
-if (resultMove.Valore > beta)
-    return resultMove;
-alfa = resultMove.Valore > alfa ? resultMove.Valore : alfa;
-\end{lstlisting}
+    {
+        resultMove = AggiornoValore(resultMove, valore, latoStep);
+    }
+	//Non verra' mai scelto da MIN  e fermo il ciclo
+    if (resultMove.Valore > beta && cambioTurno)
+        return resultMove;
+	//Se e' un valore migliore per MAX aggiorno alfa
+    alfa = resultMove.Valore > alfa ? resultMove.Valore : alfa;
+}\end{lstlisting}
 
-
-
-Un ruolo fondamentale per la qualit\`a dei tagli eseguiti durante l'algoritmo \`e dato dalla funzione euristica. Scegliendo una buona funzione \`e possibile dare dei valori alti ad alfa beta durante i primi cammini, cos\`i da riuscire a tagliare grosse porzioni di albero e risparmiare cicli di comutazione.
+Un ruolo fondamentale per la qualit\`a dei tagli eseguiti durante l'algoritmo \`e dato dalla funzione euristica. Scegliendo una buona funzione \`e possibile dare dei valori significativi ad alfa beta durante i primi cammini, cos\`i da riuscire a tagliare grosse porzioni di albero e risparmiare cicli di computazione.
 Nel caso del Bantumi ho implementato questa funzione basandomi sul risultato della differenza fra il valore dei due granai calcolato per ogni mossa possibile. Le mosse con una differenza maggiore vengono valutate prima.
 \subsection{Limitazione della profondit\`a}
-La potatura alfa beta non \`e stata sufficente per ridurre l'elaborazione a tempi accettabili, quindi ho deciso di introdurre nell'algoritmo un parametro che limitasse la dimensione dell'albero. Ho deciso di parametrizzare quante mani espandere l'albero (una mano è comprende i 2 turni dei giocatori).
-\subsection{Studio dell' apertura}
-Un' ultimo perfezionamento che ho fatto \`e stato quello di studiare le mosse di apertura. Ho fatto giocare contro se stesso il mio Bot impostando livelli di esplorazione elevati che hanno richiesto molte ore di computazione. Una volta analizzate le prime due mosse sono riuscito a aumentare notevolmente la capacit\`a di vittoria anche utilizzando Bot con livelli di esplorazione bassi.
+La potatura alfa beta non \`e stata sufficiente per ridurre l'elaborazione a tempi accettabili, quindi ho deciso di introdurre nell'algoritmo un parametro che limitasse la dimensione dell'albero. Ho deciso di parametrizzare quanti passii espandere l'albero (un passo comprende i 2 turni dei giocatori).
+\subsection{Studio dell'apertura}
+Un'ultimo perfezionamento che ho fatto \`e stato quello di studiare le mosse di apertura. Ho fatto giocare contro s\`e stesso il mio Bot, impostando livelli di esplorazione elevati che hanno richiesto molte ore di computazione. Una volta analizzate le prime due mosse sono riuscito ad aumentare notevolmente la capacit\`a di vittoria anche utilizzando Bot con livelli di esplorazione bassi.
 \subsection{Conteggio operazioni}
-Completate tutte le implemetnazioni ho cercato di fare delle valutzioni empiriche cercando di confrontare gli algoritmi e le varie euristiche che ho implementato per capire se effettivamente i miglioramenti teorici che avevo ipotizzato hanno avuto degli effetti.
-Per la valutazione ho eseguito un conteggio del numero dei nodi esaminati partendo da una situazione neutra rappresentata dalla tavola iniziale. Come prima cosa ho eseguito il test sull'algoritmo MinMax variando la limitazione del numero di turni.
+Completate tutte le implementazioni ho cercato di fare delle valutazioni empiriche cercando di confrontare gli algoritmi e le varie euristiche che ho implementato per capire se effettivamente i miglioramenti teorici che avevo ipotizzato hanno avuto degli effetti.
+Per la valutazione ho eseguito un conteggio del numero dei nodi esaminati partendo da una situazione neutra rappresentata dalla tavola iniziale. Come prima cosa ho eseguito il test sull'algoritmo MinMax, variando la limitazione del numero di turni.
 \begin{table} [h]
     \begin{tabular}{lccc}
         \hline
@@ -251,21 +276,16 @@ Per la valutazione ho eseguito un conteggio del numero dei nodi esaminati parten
     \end{tabular}
 \end{table}
 \footnotetext[2]{I nodi vengono scelti per la valutazione in modo decrescente}
-\footnotetext[3]{I nodi vengono scelti con una funzione euristica che valuta il valore in base alla differenza fra i due granai pi\'u  0,5 se la scelta da diritto ad una seconda mossa}
+\footnotetext[3]{I nodi vengono scelti con una funzione euristica che valuta il valore in base alla differenza fra i due granai pi\'u  0,5 se la scelta d\`a diritto ad una seconda mossa}
 \begin{figure}[h]
 \centering
         \includegraphics[totalheight=18cm]{Iplayer.png}
     \caption{Diagramma delle classi dei Players implementati.}
     \label{fig:verticalcell}
 \end{figure}
-\begin{figure}[h]
-\centering
-        \includegraphics[totalheight=22cm]{code.png}
-    \caption{Metodi che esegupmp la ricorsione MinMax.}
-    \label{fig:verticalcell}
-\end{figure}
+
 \subsection{Osservazioni}
-Confrontando i risultati ottenuti con le implementazioni realizzate si pu\`o immediatamente osservare il grande vantaggio computazionale dato dall'introduzione dell'alfabeta pruning. Con 4 mani di gioco (8 turni) senza nessuna potatura i nodi valutati sono quasi 100M, mentre a parit\`a di profondita ma utilizzando una funzione euristica di ordinamento nella scelta della potatura i nodi analizzati sono poco piu di 1M. Questo risultato cos\`i evidente mi fa ipotizzare che con uno studio approfondito delle tecniche di gioco sia possibile implementare una funzione euristica migliore che ottimizzi i tagli per poter estendere ulteriormente la profondit\`a dell'albero.
+Confrontando i risultati ottenuti con le implementazioni realizzate si pu\`o immediatamente osservare il grande vantaggio computazionale dato dall'introduzione dell'alfabeta pruning. Con 4 passi di gioco (8 turni) senza nessuna potatura i nodi valutati sono quasi 100M, mentre a parit\`a di profondita, ma utilizzando una funzione euristica di ordinamento nella scelta della potatura, i nodi analizzati sono poco piu di 1M. Questo risultato cos\`i evidente mi fa ipotizzare che con uno studio approfondito delle tecniche di gioco sia possibile implementare una funzione euristica migliore che ottimizzi i tagli per poter estendere ulteriormente la profondit\`a dell'albero.
 \section{Bot a confronto}
 Per una valutazione finale dell'implementazione ho confrontato l'algoritmo con alcuni giochi del Bantumi presenti in commercio. Questi sono i risultati:
 \begin{table} [h]
@@ -290,6 +310,6 @@ Per una valutazione finale dell'implementazione ho confrontato l'algoritmo con a
     \end{tabular}
 \end{table}
 \section{Risultati e sviluppi futuri}
-Il progetto \`e stato strutturato cercando di mantenere un forte indipendenza fra l'infrastruttura del gioco e l'implementazione dei vari algoritmi di IA. Questa scelta mi ha permesso di sperimentare diverse strategie, di procedere con un miglioramento graduale degli algoritmi scritti, ma soprattutto di poter consolidare in modo semplice e immediato alcuni concetti teorici spiegati durante il corso.\\
-Il normale completamento del progetto sarebbe la realizzazione di una interfaccia utente web/mobile che utilizza il mio progetto per realizzare la IA. Una possibile evlouzione del core, invece, potrebbe essere quella di sperimentare qualche tecnica di calcolo distribuito per sfruttare la potenza computazionale che potrebbe mettere a disposizione una infrastruttura di cloud computing.
+Il progetto \`e stato strutturato cercando di mantenere una forte indipendenza fra l'infrastruttura del gioco e l'implementazione dei vari algoritmi di IA. Questa scelta mi ha permesso di sperimentare diverse strategie, di procedere con un miglioramento graduale degli algoritmi scritti, ma soprattutto di poter consolidare in modo semplice e immediato alcuni concetti teorici spiegati durante il corso.\\
+Il normale completamento del progetto sarebbe la realizzazione di una interfaccia utente web/mobile che utilizza il mio progetto per realizzare la IA; una possibile evoluzione del core, invece, potrebbe essere quella di sperimentare qualche tecnica di calcolo distribuito per sfruttare la potenza computazionale che potrebbe mettere a disposizione un' infrastruttura di cloud computing.
 \end{document}

@@ -76,7 +76,7 @@ namespace Bantumi.Entities
                         if (!cambioTurno)
                             valoreProssimaMossa = MaxValue(giocoClone, depth, alfa, beta);
                         else
-                            valoreProssimaMossa = MinValue(giocoClone, depth + 1, alfa, 1000);
+                            valoreProssimaMossa = MinValue(giocoClone, depth + 1, alfa, beta);
                     }
                     ValoreMossa valore = new ValoreMossa(valoreProssimaMossa, i, ValoreAttuale(giocoClone));
                     if (null == resultMove)//inizializzazione
@@ -120,7 +120,7 @@ namespace Bantumi.Entities
                         if (!cambioTurno)
                             valoreProssimaMossa = MinValue(giocoClone, depth, alfa, beta);
                         else
-                            valoreProssimaMossa = MaxValue(giocoClone, depth + 1, -1000, beta);
+                            valoreProssimaMossa = MaxValue(giocoClone, depth + 1, alfa, beta);
                     }
 
                     ValoreMossa valore = new ValoreMossa(valoreProssimaMossa, i, ValoreAttuale(giocoClone));

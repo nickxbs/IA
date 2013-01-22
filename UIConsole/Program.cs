@@ -17,7 +17,7 @@ namespace UIConsole
             //while (true)
             //{
                 ITavola tavola = new Tavola();
-                IPlayer p1 = new MinMaxAlphaBeta(15,new HeuristicFunctionValue(Lato.A));
+                IPlayer p1 = new MinMaxAlphaBeta(4,new HeuristicFunctionValue(Lato.A));
                 IPlayer p2 =  new MinMaxAlphaBetaWithOpen(4,new HeuristicFunctionValue(Lato.B));
                 //IPlayer p2 = new MinMaxPlayer(Convert.ToInt32(args[0]));
                 IGioco gioco = new Gioco(tavola);

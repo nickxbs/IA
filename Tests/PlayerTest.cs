@@ -1,7 +1,6 @@
 ﻿using Bantumi.Entities;
 using Bantumi.Entities.Interface;
 using NUnit.Framework;
-
 namespace Tests
 {
     [TestFixture]
@@ -11,7 +10,7 @@ namespace Tests
         public void Elaborazione_SideA_ReturnRandomNumBetween0And5()
         {
             IAIPlayer player = new RandomPlayer();
-            player.LatoPlayer=Lato.A;
+            player.LatoPlayer = Lato.A;
             int i = player.Elaborazione(null);
             Assert.GreaterOrEqual(i, 0);
             Assert.GreaterOrEqual(5, i);
