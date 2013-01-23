@@ -143,7 +143,7 @@ A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere 
 
 \begin{figure}[h]
 \centering
-        \includegraphics[totalheight=3cm]{Bantumi_4.png}
+        \includegraphics[totalheight=3.5cm]{Bantumi_4.png}
     \caption{Turni multipli.}
     \label{fig:verticalcell}
 \end{figure}
@@ -151,19 +151,20 @@ A turno, ogni giocatore pu\`o effettuare una mossa che consiste nello scegliere 
 
 \begin{figure}[h]
 \centering
-        \includegraphics[totalheight=3cm]{Bantumi_2.png}
+        \includegraphics[totalheight=3.5cm]{Bantumi_2.png}
     \caption{Raccolta.}
     \label{fig:verticalcell}
 \end{figure}
 \begin{figure}[h]
 \centering
-        \includegraphics[totalheight=3cm]{Bantumi2.png}
+        \includegraphics[totalheight=3.5cm]{Bantumi2.png}
     \caption{Cattura.}
     \label{fig:verticalcell}
 \end{figure}
 
 	\item Il gioco termina quando tutte le buche di un giocatore sono vuote. Terminato il gioco il giocatore con pi\`u semi nel granaio \`e il vincitore.
 \end{enumerate}
+
 
 \section{Implementazione del Gioco}
 \subsection{I progetti.}
@@ -183,6 +184,14 @@ Le principali entit\`a per la realizzazione del gioco sono:
 	\item La classe \textit{Gioco}, che implementa le regole e i vincoli del Bantumi;
 	\item La classe \textit{Bantumi}, che si occupa del set-up.
 \end{itemize}
+
+\begin{figure}[h]
+\centering
+        \includegraphics[totalheight=18cm]{Iplayer.png}
+    \caption{Diagramma delle classi dei Players implementati.}
+    \label{fig:verticalcell}
+\end{figure}
+
 
 
 \section{Implementazione dell'algoritmo di IA}
@@ -279,20 +288,15 @@ Per la valutazione ho eseguito un conteggio del numero dei nodi esaminati parten
 
     \end{tabular}
 \end{table}
-\footnotetext[2]{I nodi vengono scelti per la valutazione in modo decrescente}
-\footnotetext[3]{I nodi vengono scelti con una funzione euristica che valuta il valore in base alla differenza fra i due granai pi\'u  0,5 se la scelta d\`a diritto ad una seconda mossa}
-\begin{figure}[h]
-\centering
-        \includegraphics[totalheight=18cm]{Iplayer.png}
-    \caption{Diagramma delle classi dei Players implementati.}
-    \label{fig:verticalcell}
-\end{figure}
+\footnotetext[1]{I nodi vengono scelti per la valutazione in modo decrescente (il primo nodo valutato e' quello che corrisponde con la scelta del cestino piu' vicino al granaio)}
+\footnotetext[2]{I nodi vengono scelti con una funzione euristica che valuta il valore in base alla differenza fra i due granai pi\'u  0,5 se la scelta d\`a diritto ad una seconda mossa}
 
 \subsection{Osservazioni}
 Confrontando i risultati ottenuti con le implementazioni realizzate si pu\`o immediatamente osservare il grande vantaggio computazionale dato dall'introduzione dell'alfabeta pruning. Con 4 passi di gioco (8 turni) senza nessuna potatura i nodi valutati sono quasi 100M, mentre a parit\`a di profondita, ma utilizzando una funzione euristica di ordinamento nella scelta della potatura, i nodi analizzati sono poco piu di 1M. Questo risultato cos\`i evidente mi fa ipotizzare che con uno studio approfondito delle tecniche di gioco sia possibile implementare una funzione euristica migliore che ottimizzi i tagli per poter estendere ulteriormente la profondit\`a dell'albero.
+\newpage
 \section{Bot a confronto}
 Per una valutazione finale dell'implementazione ho confrontato l'algoritmo con alcuni giochi del Bantumi presenti in commercio. Questi sono i risultati:
-\begin{table} [h]
+\begin{table} [hp]
     \begin{tabular}{llc}
         \hline
         Player1 & Player2 & Vincitore \\ \hline
