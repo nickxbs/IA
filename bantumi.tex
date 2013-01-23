@@ -19,6 +19,9 @@
 \usepackage{booktabs}																	% Nicer tables
 \usepackage[latin1]{inputenc}
 \usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
+
   \usepackage{courier}
 
 %%% Advanced verbatim environment
@@ -203,6 +206,7 @@ Per eseguire la ricerca viene fatta una vista in profondit\`a dell'albero di gio
 \subsection{Alfa Beta pruning}
 La dimensione dell'albero di gioco del Bantumi nelle prime mosse \`e troppo grande e rende impossibile l'esplorazione, questo \`e dovuto proprio all'esponenzialit\`a rispetto al numero di turni. Ovviamente non \`e possibile ridurre il problema ad una complessit\`a trattabile (polinomiale), tuttavia utilizzando un meccanismo di potatura possiamo evitare di valutare porzioni di albero che sicuramente non verranno prese in considerazione durante la fase di decisione della mossa migliore.\\ 
 L'idea \`e quella di valutare ad ogni nodo, dato un determinato stato possibile della tavola, se c'\`e uno stato predecessore che risulta essere migliore. Se questo fosse verificato ovviamente renderebbe inutile la valutazione di questa porzione di albero
+\lstset{style=sharpc}
 \begin{lstlisting}[label=maxPruning,caption=Implementazione Max con taglio]
 //Array delle mosse ordinete secondo una funzione Euristica
 int[] heuristc = _heuristicFunction.HeuristicFunction(gioco.Clone());
